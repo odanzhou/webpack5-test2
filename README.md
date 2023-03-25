@@ -23,3 +23,6 @@ pnpm i typescript -D
 
 #### 其他
 创建 tsconfig.json 文件会提示错误（No inputs were found in config file...）（不影响但看着不舒服）,通过新增加一个新的.ts文件即可 [tsconfig.json: Build:No inputs were found in config file](https://stackoverflow.com/questions/41211566/tsconfig-json-buildno-inputs-were-found-in-config-file)
+
+### 项目目录结构
+src: components、hooks、pages、utils、constants
