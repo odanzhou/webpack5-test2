@@ -28,6 +28,7 @@ pnpm i typescript -D
 加上 include 属性后又报错
 [TypeScript 修复错误 No inputs were found in config file](https://www.zadmei.com/txfcwniw.html)
 include 中用 "/src/\**/*" 报错，改成 "./src/\**/*" 就好了
+通过设置 "baseUrl": "./" 也可以解决上面的问题(哦，并不能)
 重启 VSCode, cmd + shift + p, reloade widnow, 其快捷键不知道为啥没起作用
 [编辑扩展程序的配置后如何重新启动VScode？](https://qastack.cn/programming/42002852/how-to-restart-vscode-after-editing-extensions-config)
 
