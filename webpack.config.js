@@ -2,7 +2,9 @@ const Webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
 const JSONC = require('jsonc-parser')
-
+console.log('texttttttt', '11111')
+return
+// 共用path 的可以搞个 npm 包
 function readJson(jsonPath) {
   const jsonText = fs.readFileSync(jsonPath, "utf8");
   return JSONC.parse(jsonText);
@@ -23,7 +25,7 @@ const resolvePaths = Object.entries(TSConfPaths).reduce((res, [key, list]) => {
  */
 module.exports = {
   mode: 'development',
-  entry: './src/pages/index.tsx',
+  entry: './src/pages/a.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
