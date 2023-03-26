@@ -17,6 +17,14 @@
 [What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 [一些你需要掌握的 tsconfig.json 常用配置项](https://zhuanlan.zhihu.com/p/570939192)
 [了不起的 tsconfig.json 指南](https://zhuanlan.zhihu.com/p/285270177)
+[Compiler Options](https://www.typescriptlang.org/tsconfig)
+[Compiler Options](https://www.typescriptlang.org/zh/tsconfig)
 
 ##### 支持 jsx
 设置 "jsx": "react"
+设置 "jsx": "react-jsx" 就可以不显示引用 React(React 17+)(import React from 'react')了 [umijs faq](https://v3.umijs.org/zh-CN/docs/faq)
+> react: 将 JSX 改为等价的对 React.createElement 的调用并生成 .js 文件。
+> react-jsx: 改为 __jsx 调用并生成 .js 文件。
+> react-jsxdev: 改为 __jsx 调用并生成 .js 文件。
+> preserve: 不对 JSX 进行改变并生成 .jsx 文件。
+> react-native: 不对 JSX 进行改变并生成 .js 文件。
