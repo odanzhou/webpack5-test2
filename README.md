@@ -39,7 +39,8 @@ src: components、hooks、pages、utils、constants
 polyfill: pnpm i -S @babel/polyfill (配合 "useBuiltIns": "usage")
 支持react: pnpm i @babel/preset-react -D
 支持ts: pnpm i @babel/preset-typescript -D
-
+webpack loader: pnpm i babel-loader -D
 
 #### 创建babel配置文件
 根目录下创建 babel.config.json (v7.8.0 及以上) 或者 babel.config.js（老版本）
+webpack 增加 [babel-loader](https://webpack.docschina.org/loaders/babel-loader/)
