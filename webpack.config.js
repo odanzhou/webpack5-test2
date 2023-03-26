@@ -42,7 +42,7 @@ module.exports = {
     alias: {
       ...resolvePaths,
     },
-    extensions: ['.ts', '.tsx', '.jsx']
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '...']
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -53,10 +53,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-
+      template: path.resolve(cwdPath, 'public/index.html')
     })
   ],
-  watch: true,
   watchOptions: {
+    ignored: /node_modules/,
   }
 }

@@ -52,3 +52,5 @@ pnpm i -S html-webpack-plugin
 
 ### 处理文件名扩展问题
 extensions: ['.ts', '.tsx', '.jsx']
+导致覆盖了默认的文件扩展名，无法使用 [resolve.extensions](https://webpack.docschina.org/configuration/resolve#resolveextensions)
+extensions: ['.tsx', '.ts', '.jsx', '.js', '...']
