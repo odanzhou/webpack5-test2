@@ -29,5 +29,17 @@ pnpm i typescript -D
 include 中用 "/src/\**/*" 报错，改成 "./src/\**/*" 就好了
 重启 VSCode, cmd + shift + p, reloade widnow, 其快捷键不知道为啥没起作用
 [编辑扩展程序的配置后如何重新启动VScode？](https://qastack.cn/programming/42002852/how-to-restart-vscode-after-editing-extensions-config)
+
 ### 项目目录结构
 src: components、hooks、pages、utils、constants
+
+### babel
+[babel](https://babeljs.io/docs/)
+基础: pnpm i -D @babel/core @babel/cli @babel/preset-env
+polyfill: pnpm i -S @babel/polyfill (配合 "useBuiltIns": "usage")
+支持react: pnpm i @babel/preset-react -D
+支持ts: pnpm i @babel/preset-typescript -D
+
+
+#### 创建babel配置文件
+根目录下创建 babel.config.json (v7.8.0 及以上) 或者 babel.config.js（老版本）
