@@ -1,5 +1,6 @@
 import { Outlet, Link } from 'react-router-dom'
 import TestComponent from '@/components/testComponent'
+import InfoPage from './InfoPage'
 
 type AppType = {
   title?: React.ReactNode,
@@ -19,6 +20,9 @@ const App = (props: AppType) => {
     </div>
     <div>
       <Outlet />
+    </div>
+    <div>
+      <InfoPage />
     </div>
   </div>)
 }

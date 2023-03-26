@@ -3,6 +3,7 @@ const path = require('path')
 const fs = require('fs')
 const JSONC = require('jsonc-parser')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { ModuleFederationPlugin } = require('webpack').container
 
 // 共用path 的可以搞个 npm 包
 function readJson(jsonPath) {
@@ -51,8 +52,16 @@ module.exports = {
     compress: true,
     port: 9000,
     hot: true,
+    historyApiFallback: true,
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: 'webpackBHost',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './InfoPage': './src/pages/InfoPage'
+      },
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(cwdPath, 'public/index.html')
     })
