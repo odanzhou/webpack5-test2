@@ -56,7 +56,7 @@ extensions: ['.ts', '.tsx', '.jsx']
 导致覆盖了默认的文件扩展名，无法使用 [resolve.extensions](https://webpack.docschina.org/configuration/resolve#resolveextensions)
 extensions: ['.tsx', '.ts', '.jsx', '.js', '...']
 
-#####
+##### polyfill
 报错：
 ```typescript
 ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ./node_modules/.pnpm/core-js@2.6.12/node_modules/core-js/modules/_descriptors.js
@@ -80,3 +80,11 @@ ES Modules may not assign module.exports or exports.*, Use ESM export syntax, in
 ]
 ```
 使用 "useBuiltIns": "entry" 也行
+
+#### React is not defined
+pnpm i -D @babel/plugin-transform-react-jsx 
+[React Plugin](https://babeljs.io/docs/babel-plugin-transform-react-jsx#react-automatic-runtime-2)
+不清楚 react/jsx-runtime  custom-jsx-library/jsx-runtime 这两者之间有什么差异
+[React 17中的新JSX增强功能](https://www.jianshu.com/p/ea33391817c7)
+[manual-babel-setup](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#manual-babel-setup)
+
