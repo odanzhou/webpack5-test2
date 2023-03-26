@@ -2,8 +2,7 @@ const Webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
 const JSONC = require('jsonc-parser')
-console.log('texttttttt', '11111')
-return
+
 // 共用path 的可以搞个 npm 包
 function readJson(jsonPath) {
   const jsonText = fs.readFileSync(jsonPath, "utf8");
@@ -33,7 +32,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts(x)?$/,
+        test: /\.(j|t)s(x)?$/,
         loader: 'babel-loader'
       }
     ]
