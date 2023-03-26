@@ -11,6 +11,7 @@ pnpm i webpack webpack-cli -D
 
 ### UI
 pnpm i react react-dom -S
+pnpm i @types/react -S
 
 ### ts
 pnpm i typescript -D
