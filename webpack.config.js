@@ -21,7 +21,6 @@ const resolvePaths = Object.entries(TSConfPaths).reduce((res, [key, list]) => {
   res[name] = list.map(pathName => path.resolve(cwdPath, pathName.replace(suffix, '')))
   return res
 }, {})
-console.log('resolvePaths', resolvePaths)
 /**
  * @type { Webpack.WebpackOptionsNormalized }
  */

@@ -81,6 +81,8 @@ ES Modules may not assign module.exports or exports.*, Use ESM export syntax, in
 ```
 使用 "useBuiltIns": "entry" 也行
 
+[Error: ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: 581](https://github.com/babel/babel/issues/12731)
+
 #### React is not defined
 pnpm i -D @babel/plugin-transform-react-jsx 
 [React Plugin](https://babeljs.io/docs/babel-plugin-transform-react-jsx#react-automatic-runtime-2)
