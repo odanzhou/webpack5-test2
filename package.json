@@ -34,8 +34,6 @@
     "webpack-dev-server": "^4.13.1"
   },
   "browserslist": [
-    "> 10%",
-    "last 2 versions",
-    "not dead"
+    "defaults and supports es6-module"
   ]
 }
