@@ -23,6 +23,10 @@ pnpm i typescript -D
 
 #### 其他
 创建 tsconfig.json 文件会提示错误（No inputs were found in config file...）（不影响但看着不舒服）,通过新增加一个新的.ts文件即可 [tsconfig.json: Build:No inputs were found in config file](https://stackoverflow.com/questions/41211566/tsconfig-json-buildno-inputs-were-found-in-config-file)
-
+加上 include 属性后又报错
+[TypeScript 修复错误 No inputs were found in config file](https://www.zadmei.com/txfcwniw.html)
+include 中用 "/src/\**/*" 报错，改成 "./src/\**/*" 就好了
+重启 VSCode, cmd + shift + p, reloade widnow, 其快捷键不知道为啥没起作用
+[编辑扩展程序的配置后如何重新启动VScode？](https://qastack.cn/programming/42002852/how-to-restart-vscode-after-editing-extensions-config)
 ### 项目目录结构
 src: components、hooks、pages、utils、constants
