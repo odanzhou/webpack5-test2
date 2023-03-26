@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
-import App from './pages/App'
+import RouterIndex from '@/router'
 
 const domNode = document?.getElementById('root')
 if(domNode) {
-  createRoot(domNode).render(<App />)
+  createRoot(domNode).render(<RouterIndex />)
 }
