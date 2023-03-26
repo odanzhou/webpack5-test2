@@ -79,3 +79,4 @@ ES Modules may not assign module.exports or exports.*, Use ESM export syntax, in
   }
 ]
 ```
+使用 "useBuiltIns": "entry" 也行

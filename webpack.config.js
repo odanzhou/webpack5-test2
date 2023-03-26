@@ -25,7 +25,7 @@ const resolvePaths = Object.entries(TSConfPaths).reduce((res, [key, list]) => {
  */
 module.exports = {
   mode: 'development',
-  entry: './src/index.tsx',
+  entry: [ 'core-js', './src/index.tsx'],
   output: {
     path: path.resolve(cwdPath, 'dist'),
     filename: '[name].js',
