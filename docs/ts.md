@@ -17,3 +17,6 @@
 [What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 [一些你需要掌握的 tsconfig.json 常用配置项](https://zhuanlan.zhihu.com/p/570939192)
 [了不起的 tsconfig.json 指南](https://zhuanlan.zhihu.com/p/285270177)
+
+##### 支持 jsx
+设置 "jsx": "react"
