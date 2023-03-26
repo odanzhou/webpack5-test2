@@ -7,7 +7,7 @@ UI：React + TS
 
 ### Webpack
 pnpm i webpack webpack-cli -D
-增加 webpack.config.js, 通过 Webpack.Configuration 来处理类型
+增加 webpack.config.js, 通过 Webpack.WebpackOptionsNormalized 来处理类型
 
 ### UI
 pnpm i react react-dom -S

@@ -20,13 +20,13 @@ const resolvePaths = Object.entries(TSConfPaths).reduce((res, [key, list]) => {
 }, {})
 
 /**
- * @type { Webpack.Configuration }
+ * @type { Webpack.WebpackOptionsNormalized }
  */
 module.exports = {
   mode: 'development',
-  entry: './src/pages/a.js',
+  entry: './src/pages/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(cwdPath, 'dist'),
     filename: '[name].js',
   },
   module: {
@@ -41,5 +41,15 @@ module.exports = {
     alias: {
       ...resolvePaths,
     }
+  },
+  devtool: 'eval-source-map',
+  devServer: {
+    static: path.join(cwdPath, 'public'),
+    compress: true,
+    port: 9000,
+    hot: true,
+  },
+  watch: true,
+  watchOptions: {
   }
 }
