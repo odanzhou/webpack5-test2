@@ -16,10 +16,12 @@ const TSConfPaths = TSConfig.compilerOptions.paths
 // 获取工作目录
 const cwdPath = process.cwd()
 const resolvePaths = Object.entries(TSConfPaths).reduce((res, [key, list]) => {
-  res[key] = list.map(pathName => path.resolve(cwdPath, pathName))
+  const [name, ...others] = key.split('/')
+  const suffix = others.join('/')
+  res[name] = list.map(pathName => path.resolve(cwdPath, pathName.replace(suffix, '')))
   return res
 }, {})
-
+console.log('resolvePaths', resolvePaths)
 /**
  * @type { Webpack.WebpackOptionsNormalized }
  */
