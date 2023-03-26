@@ -28,3 +28,17 @@
 > react-jsxdev: 改为 __jsx 调用并生成 .js 文件。
 > preserve: 不对 JSX 进行改变并生成 .jsx 文件。
 > react-native: 不对 JSX 进行改变并生成 .js 文件。
+
+#### 支持更多类型
+[Handling input file extensions other than .ts, .js, .tsx, and .jsx](https://github.com/microsoft/TypeScript/issues/10939)
+```json
+{
+  "compilerOptions": {
+    "extensions" : {
+      ".ts": "TS",
+      ".es": "JS",
+      ".js": "JSX"
+    }
+  }
+}
+```

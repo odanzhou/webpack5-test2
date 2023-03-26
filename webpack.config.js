@@ -2,6 +2,7 @@ const Webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
 const JSONC = require('jsonc-parser')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // 共用path 的可以搞个 npm 包
 function readJson(jsonPath) {
@@ -24,7 +25,7 @@ const resolvePaths = Object.entries(TSConfPaths).reduce((res, [key, list]) => {
  */
 module.exports = {
   mode: 'development',
-  entry: './src/pages/index.tsx',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(cwdPath, 'dist'),
     filename: '[name].js',
@@ -40,7 +41,8 @@ module.exports = {
   resolve: {
     alias: {
       ...resolvePaths,
-    }
+    },
+    extensions: ['.ts', '.tsx', '.jsx']
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -49,6 +51,11 @@ module.exports = {
     port: 9000,
     hot: true,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+
+    })
+  ],
   watch: true,
   watchOptions: {
   }

@@ -46,3 +46,9 @@ webpack loader: pnpm i babel-loader -D
 #### 创建babel配置文件
 根目录下创建 babel.config.json (v7.8.0 及以上) 或者 babel.config.js（老版本）
 webpack 增加 [babel-loader](https://webpack.docschina.org/loaders/babel-loader/)
+
+### 关联html文件和js代码
+pnpm i -S html-webpack-plugin
+
+### 处理文件名扩展问题
+extensions: ['.ts', '.tsx', '.jsx']
