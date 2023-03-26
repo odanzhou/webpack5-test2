@@ -15,12 +15,13 @@ pnpm i react react-dom -S
 ### ts
 pnpm i typescript -D
 #### 配置 tsconfig.json
-在根目录创建 tsconfig.json 或者 npx tsc --init
+1. 在根目录创建 tsconfig.json 或者 npx tsc --init
 [tsconfig.json](https://www.tslang.cn/docs/handbook/tsconfig-json.html)
 [What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 [一些你需要掌握的 tsconfig.json 常用配置项](https://zhuanlan.zhihu.com/p/570939192)
 [了不起的 tsconfig.json 指南](https://zhuanlan.zhihu.com/p/285270177)
 
+2. 设置 "noEmit": true, 不输出tsc打包后的文件
 #### 其他
 创建 tsconfig.json 文件会提示错误（No inputs were found in config file...）（不影响但看着不舒服）,通过新增加一个新的.ts文件即可 [tsconfig.json: Build:No inputs were found in config file](https://stackoverflow.com/questions/41211566/tsconfig-json-buildno-inputs-were-found-in-config-file)
 加上 include 属性后又报错
