@@ -50,7 +50,32 @@ webpack 增加 [babel-loader](https://webpack.docschina.org/loaders/babel-loader
 ### 关联html文件和js代码
 pnpm i -S html-webpack-plugin
 
-### 处理文件名扩展问题
+### 遇到的坑
+##### 处理文件名扩展问题
 extensions: ['.ts', '.tsx', '.jsx']
 导致覆盖了默认的文件扩展名，无法使用 [resolve.extensions](https://webpack.docschina.org/configuration/resolve#resolveextensions)
 extensions: ['.tsx', '.ts', '.jsx', '.js', '...']
+
+#####
+报错：
+```typescript
+ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ./node_modules/.pnpm/core-js@2.6.12/node_modules/core-js/modules/_descriptors.js
+    at Object.set [as exports]
+```
+把 babel 中的 useBuiltIns删除就没问题了
+```typescript
+[
+  "@babel/preset-env", {
+    "useBuiltIns": "usage"
+  }
+]
+```
+需要下载 core-js，还是没能解决值为usage时的问题，在[8982](https://github.com/odanzhou/webpack5-test1/commit/89820b6f61bbe3e8458b887f0f7d5cc5b8004eac)这个commit下，不同的browserslist值，警告错误还不一样
+```typescript
+[
+  "@babel/preset-env", {
+    "useBuiltIns": "usage",
+    "corejs": 3
+  }
+]
+```
