@@ -61,6 +61,7 @@ module.exports = {
       exposes: {
         './InfoPage': './src/pages/InfoPage'
       },
+      shared: ['react', 'react-dom']
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(cwdPath, 'public/index.html')
