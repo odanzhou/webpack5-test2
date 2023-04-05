@@ -31,6 +31,7 @@ module.exports = {
   output: {
     path: path.resolve(cwdPath, 'dist'),
     filename: '[name].js',
+    clean: true,
   },
   module: {
     rules: [
@@ -50,9 +51,12 @@ module.exports = {
   devServer: {
     static: path.join(cwdPath, 'public'),
     compress: true,
-    port: 9000,
+    port: 9100,
     hot: true,
     historyApiFallback: true,
+    // https://webpack.docschina.org/configuration/dev-server/#devserverallowedhosts
+    // 当设置为 'auto' 时，此配置项总是允许 localhost、 host 和 client.webSocketURL.hostname：
+    allowedHosts: 'auto',
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -61,7 +65,14 @@ module.exports = {
       exposes: {
         './InfoPage': './src/pages/InfoPage'
       },
-      shared: ['react', 'react-dom']
+      shared: {
+        react: {
+          singleton: true
+        },
+        'react-dom': {
+          singleton: true
+        }
+      }
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(cwdPath, 'public/index.html')
