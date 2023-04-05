@@ -65,14 +65,14 @@ module.exports = {
       exposes: {
         './InfoPage': './src/pages/InfoPage'
       },
-      shared: {
-        react: {
-          singleton: true
-        },
-        'react-dom': {
-          singleton: true
-        }
-      }
+      // shared: {
+      //   react: {
+      //     singleton: true
+      //   },
+      //   'react-dom': {
+      //     singleton: true
+      //   }
+      // }
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(cwdPath, 'public/index.html')
