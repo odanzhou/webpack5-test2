@@ -1,5 +1,5 @@
 import('./bootstrap')
-
+// 行不通
 // import { createRoot } from 'react-dom/client'
 // import RouterIndex from '@/router'
 
