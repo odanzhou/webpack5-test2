@@ -56,7 +56,7 @@ module.exports = {
     historyApiFallback: true,
     // https://webpack.docschina.org/configuration/dev-server/#devserverallowedhosts
     // 当设置为 'auto' 时，此配置项总是允许 localhost、 host 和 client.webSocketURL.hostname：
-    allowedHosts: 'auto',
+    allowedHosts: 'all',
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -65,13 +65,14 @@ module.exports = {
       exposes: {
         './InfoPage': './src/pages/InfoPage'
       },
-      // shared: {
+      shared: ['react'],
+      // shared1: {
       //   react: {
-      //     singleton: true
+      //     singleton: true,
       //   },
-      //   'react-dom': {
-      //     singleton: true
-      //   }
+      //   // 'react-dom': {
+      //   //   singleton: true
+      //   // }
       // }
     }),
     new HtmlWebpackPlugin({
