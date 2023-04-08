@@ -1,6 +1,8 @@
+import { lazy } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import TestComponent from '@/components/testComponent'
 import InfoPage from './InfoPage'
+const APageInfo =  lazy(() => import('libA/Search'))
 
 type AppType = {
   title?: React.ReactNode,
@@ -13,7 +15,7 @@ const App = (props: AppType) => {
   }
   return (<div>
     { title && <h1>{title}</h1>}
-    Hello React Page
+    Hello React Page in test2
     <TestComponent />
     <div>
       <Link to="about">to Aubout</Link>
@@ -24,6 +26,7 @@ const App = (props: AppType) => {
     <div>
       <InfoPage />
     </div>
+    <APageInfo />
   </div>)
 }
 

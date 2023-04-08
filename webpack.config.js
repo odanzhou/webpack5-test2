@@ -66,23 +66,19 @@ module.exports = {
       exposes: {
         './InfoPage': './src/pages/InfoPage'
       },
-      // shared: ['react'],
-      // 配合方案2
+      remotes: {
+        libA: 'webpackAHost@http://localhost:9000/remoteEntry.js'
+      },
       shared: {
         react: {
           singleton: true,
-          eager: true,
-          requiredVersion: packageJsonDeps.react,
+          // eager: true,
         },
+        'react-dom': {
+          singleton: true,
+          // eager: true,
+        }
       },
-      // shared1: {
-      //   react: {
-      //     singleton: true,
-      //   },
-      //   // 'react-dom': {
-      //   //   singleton: true
-      //   // }
-      // }
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(cwdPath, 'public/index.html')
