@@ -4,6 +4,7 @@ const fs = require('fs')
 const JSONC = require('jsonc-parser')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { ModuleFederationPlugin } = require('webpack').container
+const { dependencies: packageJsonDeps } = require('./package.json')
 
 // 共用path 的可以搞个 npm 包
 function readJson(jsonPath) {
@@ -65,7 +66,15 @@ module.exports = {
       exposes: {
         './InfoPage': './src/pages/InfoPage'
       },
-      shared: ['react'],
+      // shared: ['react'],
+      // 配合方案2
+      shared: {
+        react: {
+          singleton: true,
+          eager: true,
+          requiredVersion: packageJsonDeps.react,
+        },
+      },
       // shared1: {
       //   react: {
       //     singleton: true,
