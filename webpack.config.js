@@ -72,11 +72,11 @@ module.exports = {
       shared: {
         react: {
           singleton: true,
-          // eager: true,
+          eager: true,
         },
         'react-dom': {
           singleton: true,
-          // eager: true,
+          eager: true,
         }
       },
     }),
