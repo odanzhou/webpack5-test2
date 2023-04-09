@@ -72,10 +72,12 @@ module.exports = {
       shared: {
         react: {
           singleton: true,
+          requiredVersion: packageJsonDeps.react,
           // eager: true,
         },
         'react-dom': {
           singleton: true,
+          requiredVersion: packageJsonDeps['react-dom'],
           // eager: true,
         }
       },
