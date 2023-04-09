@@ -1,3 +1,4 @@
+// 可行
 import('./bootstrap')
 // 行不通
 // import { createRoot } from 'react-dom/client'
